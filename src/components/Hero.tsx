@@ -1,11 +1,9 @@
 ﻿import {FlickeringGrid} from "@/components/ui/flickering-grid";
 import {TextAnimate} from "@/components/ui/text-animate";
+import {RainbowButton} from "@/components/ui/rainbow-button";
+import { FaArrowRight } from "react-icons/fa6";
 
 export default function Hero() {
-
-    // screen height:
-
-
     return (
         <div className="bg-background relative min-h-screen w-full overflow-hidden border items-center justify-center flex">
             <FlickeringGrid
@@ -23,9 +21,10 @@ export default function Hero() {
                 <p className="mb-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
                     Web and Game Development
                 </p>
-                <button className="rounded-full bg-primary px-6 py-3 text-white hover:bg-primary/80 transition">
+                <RainbowButton size="lg" className="rounded-full px-6 py-3  hover:bg-primary/80 transition">
                     Learn More
-                </button>
+                    <FaArrowRight className="text-lg" />
+                </RainbowButton>
             </div>
         </div>
     );

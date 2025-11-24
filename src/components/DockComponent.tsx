@@ -12,6 +12,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Dock, DockIcon } from "@/components/ui/dock"
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 const Icons = {
@@ -68,6 +69,7 @@ export function DockComponent() {
                             </Tooltip>
                         </DockIcon>
                     ))}
+
                     <Separator orientation="vertical" className="h-full" />
                     {Object.entries(DATA.contact.social).map(([name, social]) => (
                         <DockIcon key={name}>
@@ -91,6 +93,16 @@ export function DockComponent() {
                             </Tooltip>
                         </DockIcon>
                     ))}
+                    <Separator orientation="vertical" className="h-full" />
+                    <DockIcon key="Theme">
+                        <AnimatedThemeToggler
+                            aria-label="Change Theme"
+                            className={cn(
+                                buttonVariants({ variant: "ghost", size: "icon" }),
+                                "size-12 rounded-full"
+                            )}
+                        />
+                    </DockIcon>
                 </Dock>
             </TooltipProvider>
         </div>
