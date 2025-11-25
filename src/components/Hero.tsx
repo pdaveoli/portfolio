@@ -15,7 +15,7 @@ export default function Hero() {
                 flickerChance={0.1}
             />
             <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 text-center">
-                <TextAnimate animation="blurInUp" as="h1" className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl">
+                <TextAnimate once={true} animation="blurInUp" as="h1" className="mb-4 text-4xl font-bold sm:text-5xl md:text-6xl">
                 Oliver Dave
                 </TextAnimate>
                 <p className="mb-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
