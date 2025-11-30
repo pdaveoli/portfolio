@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { ScrollProgressGate } from "@/components/ScrollProgressGate";
 import { DockComponent } from "@/components/DockComponent";
-
+import Footer from "@/components/Footer";
 export const metadata: Metadata = {
     title: "Oliver Dave's Portfolio",
     description: "Web and Game Development Portfolio of Oliver Dave",
@@ -23,15 +23,16 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
-            <div className="pointer-events-none fixed inset-x-0 top-0 z-50">
-                <ScrollProgress />
-            </div>
+
+                <ScrollProgressGate />
+
             <div className="relative flex min-h-screen flex-col pb-28">
                 {children}
             </div>
             <div className="fixed inset-x-0 bottom-10 z-50">
                 <DockComponent />
             </div>
+            <Footer />
         </ThemeProvider>
         </body>
         </html>

@@ -4,7 +4,7 @@ import { RiTailwindCssFill, RiJavascriptFill, RiNextjsFill } from "react-icons/r
 import { FaHtml5, FaCss3Alt, FaReact, FaUnity, FaPython, FaGitAlt} from "react-icons/fa6";
 import { PiFileCSharp, PiFileSql } from "react-icons/pi";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "motion/react";
+import {BlurFade} from "@/components/ui/blur-fade";
 
 const skillLevels = {
     beginner: "Beginner",
@@ -119,6 +119,39 @@ export default function SkillsSection() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl">
                 {categories.map((category, index) => (
+                    <BlurFade
+                        key={category.name}
+                        className="bg-card shadow-md rounded-lg p-6"
+                        delay={index * 0.2}
+                        inView
+                        blur="6px"
+                        duration={0.4}>
+                        <h3 className="text-xl font-semibold mb-4 text-center">{category.name}</h3>
+                        <ul className="space-y-4">
+                            {category.skills.map((skill) => (
+                                <li key={skill.name} className="flex items-start gap-4">
+                                    <div>{skill.icon}</div>
+                                    <div>
+                                        <div className="flex flex-row gap-3 mb-2">
+                                            <h4 className="font-semibold">{skill.name}</h4>
+                                            <Badge className={`${getLevelBadgeClass(skill.level)}`}>
+                                                {skill.level}
+                                            </Badge>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground">{skill.description}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </BlurFade>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+/*
+{categories.map((category, index) => (
                     <motion.div
                         key={category.name}
                         className="bg-card shadow-md rounded-lg p-6"
@@ -149,7 +182,4 @@ export default function SkillsSection() {
                         </ul>
                     </motion.div>
                 ))}
-            </div>
-        </div>
-    );
-}
+ */
