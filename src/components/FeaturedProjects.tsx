@@ -2,9 +2,6 @@
 import { Badge } from "@/components/ui/badge"
 import {BentoGrid, BentoGridItem} from "@/components/ui/bento-grid";
 import { FaCircleInfo } from "react-icons/fa6"
-import {RainbowButton} from "@/components/ui/rainbow-button";
-import { FaArrowRight } from "react-icons/fa6";
-import Link from "next/link";
 
 const Skeleton = () => (
     <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
@@ -112,7 +109,7 @@ const items = [
 
 export default function FeaturedProjects() {
     return (
-        <div className="flex min-h-screen w-full flex-col items-center justify-center gap-2 p-6">
+        <div id="featuredProjects" className="flex min-h-screen w-full flex-col items-center justify-center gap-2 p-2">
             <TextAnimate
                 animation="blurInUp"
                 as="h2"
@@ -133,11 +130,6 @@ export default function FeaturedProjects() {
                     />
                 ))}
             </BentoGrid>
-            <RainbowButton variant="outline" className="mt-5 mb-6" asChild>
-                <Link href="/projects">
-                    All Projects <FaArrowRight />
-                </Link>
-            </RainbowButton>
         </div>
     )
 }

@@ -2,6 +2,7 @@
 import {TextAnimate} from "@/components/ui/text-animate";
 import {RainbowButton} from "@/components/ui/rainbow-button";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -21,9 +22,11 @@ export default function Hero() {
                 <p className="mb-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
                     Web and Game Development
                 </p>
-                <RainbowButton size="lg" className="rounded-full px-6 py-3  hover:bg-primary/80 transition">
-                    Learn More
-                    <FaArrowRight className="text-lg" />
+                <RainbowButton size="lg" className="rounded-full px-6 py-3  hover:bg-primary/80 transition" asChild>
+                    <Link href="#about" className="flex items-center gap-2">
+                        Learn More
+                        <FaArrowRight className="text-lg" />
+                    </Link>
                 </RainbowButton>
             </div>
         </div>
