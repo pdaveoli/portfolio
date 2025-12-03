@@ -18,11 +18,13 @@ export default function ContactSection() {
                         Email Me
                     </Link>
                 </RainbowButton>
+                {/*
                 <Button size="icon" variant="ghost" asChild>
                     <Link href="https://www.linkedin.com/in/oliver-dave-123456789/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedinIn />
                     </Link>
                 </Button>
+                */}
             </div>
         </div>
     )

@@ -37,14 +37,14 @@ export default function AboutPage() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <Button className="font-semibold py-2 px-4 rounded-lg text-center" asChild>
-                        <Link href="#">
+                        <Link href="/projects">
                             See Projects
                         </Link>
                     </Button>
                     <Button
                         variant="outline"
                        className="font-semibold py-2 px-4 rounded-lg hover:bg-tertiary/10 text-center" asChild>
-                        <Link href="#">
+                        <Link href="#contact">
                             Contact Me
                         </Link>
                     </Button>
