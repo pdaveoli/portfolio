@@ -1,12 +1,10 @@
 ﻿import { getAllProjects } from "@/lib/getProject";
-import Link from "next/link";
-import Image from "next/image";
-import {TagPill} from "@/components/TagPill";
+import ProjectView from "@/components/ProjectView";
 import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
-    BreadcrumbList, BreadcrumbPage,
+    BreadcrumbList,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
 
@@ -29,7 +27,8 @@ export default async function ProjectsPage() {
                 </BreadcrumbList>
             </Breadcrumb>
             <h1 className="text-4xl font-bold mb-8">Projects</h1>
-
+            <ProjectView pinnedProjects={pinnedProjects} otherProjects={otherProjects}/>
+            {/*
             <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pinnedProjects.map((project)  => (
                     <Link href={`/projects/${project.slug}`} key={project.slug} className="border rounded-lg p-4 shadow-lg ">
@@ -72,6 +71,7 @@ export default async function ProjectsPage() {
                     </Link>
                 ))}
             </div>
+            */}
         </main>
     );
 }
