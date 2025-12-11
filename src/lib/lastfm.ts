@@ -1,8 +1,4 @@
-﻿
-const LAST_FM_USERNAME = "oliverdf1";
-const API_KEY = process.env.LASTFM_API_KEY;
-
-/*
+﻿/*
 {
     "recenttracks": {
         "track": [{
@@ -70,6 +66,14 @@ const API_KEY = process.env.LASTFM_API_KEY;
 }
  */
 
+export interface TrackInfo {
+    album?: {
+        image: {
+            size: string;
+            "#text": string;
+        }[];
+    };
+}
 
 export interface LastFmTrack {
     artist : {
@@ -97,6 +101,9 @@ export interface LastFmTrack {
     duration? : string;
     playcount? : string;
 }
+/*
+
+Replaced by server API routes with caching
 
 export async function GetRecentLastFmTracks() : Promise<LastFmTrack[]> {
     const api = API_KEY ? API_KEY : "4b4a033b6ccf7bc26bf99801d12502cf";
@@ -121,3 +128,4 @@ export async function GetTrackInfo(artist: string, track: string): Promise<{ alb
     const json = await response.json();
     return json.track;
 }
+ */

@@ -3,6 +3,7 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import AboutPage from "@/components/About";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
+import LastFmWidget from "@/components/LastFmWidget";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <AboutPage />
         <FeaturedProjects />
         <SkillsSection />
+        <LastFmWidget />
         <ContactSection />
     </div>
   );
