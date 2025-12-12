@@ -7,7 +7,7 @@ interface CacheEntry {
 }
 
 const CACHE: Record<string, CacheEntry> = {};
-const CACHE_DURATION = 1000 * 60 * 20; // 20 minutes
+const CACHE_DURATION = 1000 * 60 * 10; // 10 minutes
 const LAST_FM_USERNAME = "oliverdf1";
 
 export async function GET(req: Request) {
