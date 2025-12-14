@@ -22,7 +22,7 @@ export async function GET(req: Request) {
         return NextResponse.json(cached.data);
     }
 
-    const apiKey = process.env.LAST_FM_API_KEY;
+    const apiKey = process.env.LASTFM_API_KEY;
     const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${LAST_FM_USERNAME}&api_key=${apiKey}&format=json&limit=10&period=${period}`;
 
     const res = await fetch(url);
