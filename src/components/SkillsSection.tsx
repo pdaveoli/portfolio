@@ -21,13 +21,13 @@ export default function SkillsSection() {
                 {
                     name: "HTML5",
                     icon: <FaHtml5 className="h-8 w-8 text-orange-600" />,
-                    description: "Experienced in building semantic and accessible web pages using HTML5.",
+                    description: "Making websites in HTML5 with accessible UI structure.",
                     level: skillLevels.advanced,
                 },
                 {
                     name: "CSS3",
                     icon: <FaCss3Alt className="h-8 w-8 text-blue-600" />,
-                    description: "Skilled in styling web pages with CSS3, including Flexbox and Grid layouts.",
+                    description: "Styling web pages using modern CSS techniques including Flexbox and Grid.",
                     level: skillLevels.intermediate
                 },
                 {
@@ -44,20 +44,20 @@ export default function SkillsSection() {
                 {
                     name: "React",
                     icon: <FaReact className="h-8 w-8 text-cyan-500" />,
-                    description: "Experienced in building single-page applications using React.",
+                    description: "Building experience in making web applications using React.js.",
                     level: skillLevels.intermediate
                 },
                 {
                     name: "Next.js",
                     icon: <RiNextjsFill className="h-8 w-8 text-black dark:text-white" />,
-                    description: "Skilled in server-side rendering and static site generation with Next.js.",
+                    description: "The main framework I use for React websites.",
                     level: skillLevels.intermediate
                 },
                 {
                     name: "Tailwind CSS",
                     icon: <RiTailwindCssFill className="h-8 w-8 text-teal-400" />,
                     description: "Proficient in utility-first CSS framework for rapid UI development.",
-                    level: skillLevels.beginner
+                    level: skillLevels.intermediate
                 }
             ]
         },
@@ -73,7 +73,7 @@ export default function SkillsSection() {
                 {
                     name: "C#",
                     icon: <PiFileCSharp className="h-8 w-8 text-purple-600" />,
-                    description: "Proficient in C# programming for game development in Unity.",
+                    description: "Proficient in C# programming for game development in Unity and some .NET applications.",
                     level: skillLevels.intermediate
                 }
             ]

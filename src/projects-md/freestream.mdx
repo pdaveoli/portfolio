@@ -1,0 +1,66 @@
+﻿---
+title: "FreeStream - Music Streaming Web App"
+date: "2025-7-17"
+description: "A next.js music streaming web application with user authentication and playlist management."
+tags: ["Web Development", "Next.Js", "React.Js", "Tailwind CSS", "Open Source"]
+thumbnailUrl: "/freestream/FreestreamHome.png"
+pinned: true
+---
+
+
+# Overview
+This project was my first major web application I worked on by myself in Next.Js. It is an online music streaming web app built like Spotify that supports user authentication, playlist management, and music playback. The app is designed to have clear and intuitive UI/UX using Tailwind CSS for styling.
+<ImageCarousel imageUrls={[
+    "/freestream/FreestreamHero.png",
+    "/freestream/FreestreamHome.png",
+    "/freestream/FreestreamPlaylistsAndQueues.png",
+    "/freestream/FreestreamUserPageAndSyncedLyrics.png",
+]} />
+
+## Why This Project?
+I built this project during Year 10 as part of GCSE Computer Science, but I intentionally pushed it far beyond the course requirements.
+
+I wanted to combine two things I care deeply about: music and software development, while challenging myself to build something complex and realistic rather than a small demo app.
+
+### Features
+- Landing page with app overview and features.
+- User authentication (sign up, log in, log out).
+- Music library with search functionality.
+- Playlist creation and management.
+- Persistent music playback across pages
+- Playback controls (play, pause, skip, shuffle, repeat, queue)
+- Clean and modern UI using Tailwind CSS.
+
+### Tech Stack
+- Next.js for server-side rendering and routing.
+- React.js for building interactive UI components.
+- Tailwind CSS for styling and responsive design.
+- Supabase for user authentication and database management.
+
+## Challenges
+### Global music state
+The first major challenge was through the state management of the music player. I wanted to make sure that even if you went to different pages of the website, the music would remain playing. I overcame this challenge through research into using React Context to manage the global state of the music player across different components and pages.
+### Dynamic user content
+Another major challenge was making the website dynamic in terms of content. I wanted to make sure that users could create their own playlists and have their own accounts. I figured this out by learning how to use Supabase as a backend database to store user data and playlist information. I also had to learn how to use Next.Js Dynamic Routes to create user-specific pages and pages for each album/artists.
+### UI/UX design
+Designing the UI/UX of the website was something that needed a lot of consideration for me. I wanted to make sure that the website was easy to use and visually appealing. Through researching modern design principles and using Tailwind CSS to quickly prototype and style the components of the website, I managed to create a clean and modern design that I am proud of.
+### Client vs server rendering
+Something a bit smaller that kept coming up was client and server-side rendering in Next.Js. I had to learn the differences between the two and how to properly fetch data on both the client and server sides to ensure optimal performance and user experience. Ultimately, this took a lot of trial and error, causing many failed deployments, but I eventually got the hang of it.
+## What I Learnt
+- Gained a solid understanding of Next.js and React.js for building web applications.
+- Learned how to implement user authentication and manage user sessions through Supabase.
+- Improved my skills in state management using React Context.
+- Developed a keen eye for UI/UX design principles using Tailwind CSS.
+- Working on complex, multi-featured projects and managing code organization and structure effectively.
+- Staying motivated and overcoming challenges during the development process.
+## Future Improvements
+- Implement social features such as following other users and sharing playlists.
+- Add more advanced music playback features like crossfade and gapless playback.
+- Optimize performance for faster load times and smoother playback.
+- Expand the music library with more songs and artists.
+## Links
+- [GitHub Repository](https://github.com/pdaveoli/music-streaming-platform)
+- [Live Demo](https://music-streaming-platform-two.vercel.app/)
+## Conclusion
+This project really was a significant milestone for me. It took over the span of 1 and a half months to complete and taught me so much about web development, user authentication, state management, and UI/UX design. I am proud of what I accomplished with this project, and it has definitely fueled my passion for coding and web development even more. I look forward to continuing to improve and expand upon this project in the future.
+The project is open source, but the Supabase database might be down as it was a free tier account.

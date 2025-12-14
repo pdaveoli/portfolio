@@ -20,7 +20,7 @@ export default function Hero() {
                 Oliver Dave
                 </TextAnimate>
                 <p className="mb-8 max-w-2xl text-lg sm:text-xl md:text-2xl text-muted-foreground">
-                    Web and Game Development
+                    Student Web and Game Developer
                 </p>
                 <RainbowButton size="lg" className="rounded-full px-6 py-3  hover:bg-primary/80 transition" asChild>
                     <Link href="#about" className="flex items-center gap-2">

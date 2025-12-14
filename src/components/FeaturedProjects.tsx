@@ -1,113 +1,82 @@
 ﻿import { TextAnimate } from "@/components/ui/text-animate"
-import { Badge } from "@/components/ui/badge"
-import {BentoGrid, BentoGridItem} from "@/components/ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { FaCircleInfo } from "react-icons/fa6"
+import { TagPill } from "@/components/TagPill";
+import { Tag } from "@/lib/tags";
+import { getProject } from "@/lib/getProject";
+import { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Skeleton = () => (
-    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
 );
-const items = [
-    {
-        title: "Project 1",
-        description: (
-            <>
-                <div className="flex flex-row items-center gap-2">
-                    <Badge className="border border-sky-500/40 bg-sky-500/10 text-sky-500">
-                        React.JS
-                    </Badge>
-                    <Badge className="border border-indigo-500/40 bg-indigo-500/10 text-indigo-500">
-                        TypeScript
-                    </Badge>
-                    <Badge className="border border-emerald-500/40 bg-emerald-500/10 text-emerald-500">
-                        TailwindCSS
-                    </Badge>
-                </div>
-                <p className="mt-2">
-                    A project description with technology badges.
-                </p>
-            </>
-        ),
-        header: <Skeleton />,
-        className: "md:col-span-2",
-        icon: <FaCircleInfo className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-        title: "Project 2",
-        description: (
-            <>
-                <div className="flex flex-row items-center gap-2">
-                    <Badge className="border border-sky-500/40 bg-sky-500/10 text-sky-500">
-                        React.JS
-                    </Badge>
-                    <Badge className="border border-indigo-500/40 bg-indigo-500/10 text-indigo-500">
-                        TypeScript
-                    </Badge>
-                    <Badge className="border border-emerald-500/40 bg-emerald-500/10 text-emerald-500">
-                        TailwindCSS
-                    </Badge>
-                </div>
-                <p className="mt-2">
-                    A project description with technology badges.
-                </p>
-            </>
-        ),
-        header: <Skeleton />,
-        className: "md:col-span-1",
-        icon: <FaCircleInfo className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-        title: "Project 3",
-        description: (
-            <>
-                <div className="flex flex-row items-center gap-2">
-                    <Badge className="border border-sky-500/40 bg-sky-500/10 text-sky-500">
-                        React.JS
-                    </Badge>
-                    <Badge className="border border-indigo-500/40 bg-indigo-500/10 text-indigo-500">
-                        TypeScript
-                    </Badge>
-                    <Badge className="border border-emerald-500/40 bg-emerald-500/10 text-emerald-500">
-                        TailwindCSS
-                    </Badge>
-                </div>
-                <p className="mt-2">
-                    A project description with technology badges.
-                </p>
-            </>
-        ),
-        header: <Skeleton />,
-        className: "md:col-span-1",
-        icon: <FaCircleInfo className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-        title: "Project 4",
-        description:
-            (
-                <>
-                    <div className="flex flex-row items-center gap-2">
-                        <Badge className="border border-sky-500/40 bg-sky-500/10 text-sky-500">
-                            React.JS
-                        </Badge>
-                        <Badge className="border border-indigo-500/40 bg-indigo-500/10 text-indigo-500">
-                            TypeScript
-                        </Badge>
-                        <Badge className="border border-emerald-500/40 bg-emerald-500/10 text-emerald-500">
-                            TailwindCSS
-                        </Badge>
-                    </div>
-                    <p className="mt-2">
-                        A project description with technology badges.
-                    </p>
-                </>
-            ),
-        header: <Skeleton />,
-        className: "md:col-span-2",
-        icon: <FaCircleInfo className="h-4 w-4 text-neutral-500" />,
-    },
+
+interface Frontmatter {
+    title: string;
+    date: string;
+    description?: string;
+    pinned: boolean;
+    thumbnailUrl?: string;
+    tags: Tag[];
+    [key: string]: unknown;
+}
+
+interface BentoItem {
+    title: string;
+    tags: Tag[];
+    description: string;
+    header: ReactNode;
+    className: string;
+    icon: ReactNode;
+    slug?: string;
+}
+
+// Define which projects to feature and their display settings
+const featuredProjectConfigs = [
+    { slug: "freestream", className: "md:col-span-2" },
+    // Add more projects here as needed
 ];
 
+async function getFeaturedItems(): Promise<BentoItem[]> {
+    const items: BentoItem[] = [];
 
-export default function FeaturedProjects() {
+    for (const config of featuredProjectConfigs) {
+        const { frontmatter } = await getProject<Frontmatter>(config.slug);
+        items.push({
+            title: frontmatter.title,
+            tags: frontmatter.tags,
+            description: frontmatter.description || "",
+            header: frontmatter.thumbnailUrl ? (
+                <div className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden">
+                    <Image src={frontmatter.thumbnailUrl} alt={frontmatter.title} fill className="object-cover object-top" />
+                </div>
+            ) : (
+                <Skeleton />
+            ),
+            className: config.className,
+            icon: <FaCircleInfo className="h-4 w-4 text-neutral-500" />,
+            slug: config.slug,
+        });
+    }
+
+    return items;
+}
+
+export default async function FeaturedProjects() {
+    const items = await getFeaturedItems();
+
+    const descriptionSection = (tags: Tag[], description: string) => (
+        <div className="flex flex-wrap flex-col gap-2">
+            <div className="flex flex-wrap gap-2">
+                {tags.map((tag, i) => (
+                    <TagPill key={i} tag={tag} />
+                ))}
+            </div>
+            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
+        </div>
+    );
+
     return (
         <div id="featuredProjects" className="flex min-h-screen w-full flex-col items-center justify-center gap-2 p-2">
             <TextAnimate
@@ -118,18 +87,20 @@ export default function FeaturedProjects() {
             >
                 Featured Projects
             </TextAnimate>
-            <BentoGrid className="max-w-6xl w-full mx-auto md:auto-rows-[20rem]">
+            <BentoGrid className="max-w-6xl w-full mx-auto md:auto-rows-[36rem]">
                 {items.map((item, i) => (
-                    <BentoGridItem
-                        key={i}
-                        title={item.title}
-                        description={item.description}
-                        header={item.header}
-                        className={item.className}
-                        icon={item.icon}
-                    />
+                    <Link key={i} href={`/projects/${item.slug}`} className={item.className}>
+                        <BentoGridItem
+                            title={item.title}
+                            description={descriptionSection(item.tags, item.description)}
+                            header={item.header}
+                            className="h-full"
+                            icon={item.icon}
+                        />
+                    </Link>
                 ))}
             </BentoGrid>
+
         </div>
-    )
+    );
 }

@@ -106,7 +106,7 @@ export interface LastFmTrack {
 Replaced by server API routes with caching
 
 export async function GetRecentLastFmTracks() : Promise<LastFmTrack[]> {
-    const api = API_KEY ? API_KEY : "4b4a033b6ccf7bc26bf99801d12502cf";
+    const api = API_KEY;
     const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LAST_FM_USERNAME}&api_key=${api}&format=json&limit=10`;
     const data = await fetch(url, { next: { revalidate: 3600 } });
     const json = await data.json();
@@ -114,7 +114,7 @@ export async function GetRecentLastFmTracks() : Promise<LastFmTrack[]> {
 }
 
 export async function GetTopLastFmTracks(period : string) : Promise<LastFmTrack[]> {
-    const api = API_KEY ? API_KEY : "4b4a033b6ccf7bc26bf99801d12502cf";
+    const api = API_KEY;
     const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${LAST_FM_USERNAME}&api_key=${api}&format=json&limit=10&period=${period}`;
     const response = await fetch(url, { next: { revalidate: 3600 } });
     const json = await response.json();
@@ -122,7 +122,7 @@ export async function GetTopLastFmTracks(period : string) : Promise<LastFmTrack[
 }
 
 export async function GetTrackInfo(artist: string, track: string): Promise<{ album?: { image: { size: string; "#text": string }[] } }> {
-    const api = API_KEY ? API_KEY : "4b4a033b6ccf7bc26bf99801d12502cf";
+    const api = API_KEY;
     const url = `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${api}&artist=${encodeURIComponent(artist)}&track=${encodeURIComponent(track)}&format=json`;
     const response = await fetch(url, { next: { revalidate: 3600 } });
     const json = await response.json();

@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ScrollProgressGate } from "@/components/ScrollProgressGate";
 import { DockComponent } from "@/components/DockComponent";
 import Footer from "@/components/Footer";
-export const metadata: Metadata = {
+import {Metadata} from "next";
+export const metadata : Metadata = {
     title: "Oliver Dave's Portfolio",
     description: "Web and Game Development Portfolio of Oliver Dave",
 };

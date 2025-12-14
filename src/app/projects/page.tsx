@@ -10,8 +10,6 @@ import {
 
 export default async function ProjectsPage() {
     const projects = await getAllProjects();
-    const pinnedProjects = projects.filter(project => project.pinned);
-    const otherProjects = projects.filter(project => !project.pinned);
 
     return (
         <main className="min-h-screen p-12">
@@ -27,7 +25,7 @@ export default async function ProjectsPage() {
                 </BreadcrumbList>
             </Breadcrumb>
             <h1 className="text-4xl font-bold mb-8">Projects</h1>
-            <ProjectView pinnedProjects={pinnedProjects} otherProjects={otherProjects}/>
+            <ProjectView projects={projects} />
             {/*
             <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pinnedProjects.map((project)  => (

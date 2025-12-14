@@ -30,21 +30,20 @@ export const SearchKeyboardShortcut = (onKeyPressed: () => void) => {
     return null;
 }
 
-export default function ProjectView({pinnedProjects, otherProjects}: { pinnedProjects: ProjectMeta[], otherProjects: ProjectMeta[] }) {
+export default function ProjectView({projects }: {projects: ProjectMeta[]}) {
     const [query, setQuery] = useState("");
-    const [filteredPinned, setFilteredPinned] = useState<ProjectMeta[]>(pinnedProjects);
+   const [filteredProjects, setFilteredProjects] = useState<ProjectMeta[]>(projects);
     const [filteredTags, setFilteredTags] = useState<Tag[]|null>(null);
     const [filterMenuOpen, setFilterMenuOpen] = useState(false);
-    const [filteredOther, setFilteredOther] = useState<ProjectMeta[]>(otherProjects);
     const searchInputRef = useRef<HTMLInputElement>(null);
 
     const allTags = useMemo(() => {
         const tagSet = new Set<Tag>();
-        [...pinnedProjects, ...otherProjects].forEach(project => {
+        projects.forEach(project => {
             project.tags?.forEach(tag => tagSet.add(tag));
         });
         return Array.from(tagSet).sort((a, b) => a.localeCompare(b));
-    }, [pinnedProjects, otherProjects]);
+    }, [projects]);
 
     const toggleTag = (tag: Tag) => {
         setFilteredTags(prev => {
@@ -77,13 +76,11 @@ export default function ProjectView({pinnedProjects, otherProjects}: { pinnedPro
         };
 
         if (q === "" && (!filteredTags || filteredTags.length === 0)) {
-            setFilteredPinned(pinnedProjects);
-            setFilteredOther(otherProjects);
+            setFilteredProjects(projects);
             return;
         }
 
-        setFilteredPinned(pinnedProjects.filter(filterFunc));
-        setFilteredOther(otherProjects.filter(filterFunc));
+        setFilteredProjects(projects.filter(filterFunc));
     }
 
     const handleSearchShortcut = () => {
@@ -148,10 +145,7 @@ export default function ProjectView({pinnedProjects, otherProjects}: { pinnedPro
                     </div>
                 </div>
             )}
-            {filteredPinned.length > 0 && (
-                <ProjectList projects={filteredPinned} pinned={true} />
-            )}
-            <ProjectList projects={filteredOther} pinned={false} />
+            <ProjectList projects={filteredProjects} pinned={false} />
         </div>
     );
 }
