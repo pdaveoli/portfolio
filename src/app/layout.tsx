@@ -4,6 +4,7 @@ import { ScrollProgressGate } from "@/components/ScrollProgressGate";
 import { DockComponent } from "@/components/DockComponent";
 import Footer from "@/components/Footer";
 import {Metadata} from "next";
+import ClickSpark from "@/components/ClickSpark";
 export const metadata : Metadata = {
     title: "Oliver Dave's Portfolio",
     description: "Web and Game Development Portfolio of Oliver Dave",
@@ -23,6 +24,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
+
 
                 <ScrollProgressGate />
 
