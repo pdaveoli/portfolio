@@ -30,12 +30,13 @@ interface BentoItem {
     className: string;
     icon: ReactNode;
     slug?: string;
+    isWide?: boolean;
 }
 
-// Define which projects to feature and their display settings
 const featuredProjectConfigs = [
-    { slug: "freestream", className: "md:col-span-2" },
-    // Add more projects here as needed
+    { slug: "freestream", className: "md:col-span-2", isWide: true },
+    { slug: "tinyletters", className: "md:col-span-1", isWide: false },
+    { slug: "portfolio", className: "md:col-span-2", isWide: true },
 ];
 
 async function getFeaturedItems(): Promise<BentoItem[]> {
@@ -48,7 +49,7 @@ async function getFeaturedItems(): Promise<BentoItem[]> {
             tags: frontmatter.tags,
             description: frontmatter.description || "",
             header: frontmatter.thumbnailUrl ? (
-                <div className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden">
+                <div className={`w-full min-h-50 relative rounded-md overflow-hidden mb-4 flex items-center justify-center aspect-video ${!config.isWide ? 'md:aspect-[3/4]' : ''}`}>
                     <Image src={frontmatter.thumbnailUrl} alt={frontmatter.title} fill className="object-cover object-top" />
                 </div>
             ) : (
@@ -57,6 +58,7 @@ async function getFeaturedItems(): Promise<BentoItem[]> {
             className: config.className,
             icon: <FaCircleInfo className="h-4 w-4 text-neutral-500" />,
             slug: config.slug,
+            isWide: config.isWide,
         });
     }
 
@@ -87,7 +89,7 @@ export default async function FeaturedProjects() {
             >
                 Featured Projects
             </TextAnimate>
-            <BentoGrid className="max-w-6xl w-full mx-auto md:auto-rows-[36rem]">
+            <BentoGrid className="max-w-6xl w-full mx-auto md:auto-rows-[30rem]">
                 {items.map((item, i) => (
                     <Link key={i} href={`/projects/${item.slug}`} className={item.className}>
                         <BentoGridItem
