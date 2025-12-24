@@ -12,15 +12,15 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://oliverdave.dev/_next/image?url=%2FprojectArtwork%2Fportfolio%2FportfolioHero.png&amp;w=1920&amp;q=75" alt="project-screenshot" width="400" height="300/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioHero.png" alt="project-screenshot" width="750" height="422/">
 
-<img src="https://oliverdave.dev/_next/image?url=%2FprojectArtwork%2Fportfolio%2FportfolioAbout.png&amp;w=1920&amp;q=75" alt="project-screenshot" width="400" height="300/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioAbout.png" alt="project-screenshot" width="750" height="422/">
 
-<img src="https://oliverdave.dev/_next/image?url=%2FprojectArtwork%2Fportfolio%2FportfolioFeaturedProjects.png&amp;w=1920&amp;q=75" alt="project-screenshot" width="400" height="300/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioFeaturedProjects.png" alt="project-screenshot" width="750" height="422/">
 
-<img src="https://oliverdave.dev/_next/image?url=%2FprojectArtwork%2Fportfolio%2FportfolioProjectExample.png&amp;w=1920&amp;q=75" alt="project-screenshot" width="400" height="300/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioProjectExample.png" alt="project-screenshot" width="750" height="422/">
 
-<img src="https://oliverdave.dev/_next/image?url=%2FprojectArtwork%2Fportfolio%2FportfolioMySkills.png&amp;w=1920&amp;q=75" alt="project-screenshot" width="400" height="300/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioMySkills.png" alt="project-screenshot" width="750" height="422/">
 
 
 
