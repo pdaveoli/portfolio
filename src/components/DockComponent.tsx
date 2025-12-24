@@ -1,7 +1,8 @@
 ﻿"use client";
 import React from "react"
 import Link from "next/link"
-import { FaHouse, FaComputer, FaGithub, FaItchIo, FaFileLines } from "react-icons/fa6";
+import { FaHouse, FaComputer, FaGithub, FaItchIo } from "react-icons/fa6";
+import { IoMail } from "react-icons/io5";
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -18,7 +19,7 @@ export type IconProps = React.HTMLAttributes<SVGElement>
 const Icons = {
     home: (props: IconProps) => <FaHouse {...props} />,
     projects: (props: IconProps) => <FaComputer  {...props} />,
-    CV: (props: IconProps) => ( <FaFileLines {...props} /> ),
+    email: (props: IconProps) => ( <IoMail {...props} /> ),
     itchIo: (props: IconProps) => ( <FaItchIo {...props} /> ),
     github: (props: IconProps) => ( <FaGithub {...props} /> ),
 }
@@ -26,7 +27,7 @@ const DATA = {
     navbar: [
         { href: "/", icon: Icons.home, label: "Home" },
         { href: "/projects", icon: Icons.projects, label: "Projects" },
-        { href: "#", icon: Icons.CV, label: "CV" },
+        { href: "mailto:contact@oliverdave.dev", icon: Icons.email, label: "Email" },
     ],
     contact: {
         social: {

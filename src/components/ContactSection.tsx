@@ -14,17 +14,10 @@ export default function ContactSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <RainbowButton size="lg" variant="default" asChild>
-                    <Link href="mailto:oliversadave@gmail.com">
+                    <Link href="mailto:contact@oliverdave.dev">
                         Email Me
                     </Link>
                 </RainbowButton>
-                {/*
-                <Button size="icon" variant="ghost" asChild>
-                    <Link href="https://www.linkedin.com/in/oliver-dave-123456789/" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedinIn />
-                    </Link>
-                </Button>
-                */}
             </div>
         </div>
     )
