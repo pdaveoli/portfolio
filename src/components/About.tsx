@@ -5,7 +5,7 @@ import {FaUserCircle} from "react-icons/fa";
 export default function AboutPage() {
     return (
         <section
-            className="min-h-screen w-full py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-8"
+            className="min-h-screen w-full py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-8 bg-linear-to-b from-accent/40 to-background"
             id="about">
             <div className="w-full md:w-5/12 flex justify-center h-full md:justify-end">
                 <FaUserCircle className="text-secondary dark:text-tertiary w-72 h-96 md:w-80 lg:w-96 drop-shadow-lg" />

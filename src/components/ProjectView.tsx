@@ -56,12 +56,8 @@ export default function ProjectView({projects }: {projects: ProjectMeta[]}) {
         });
     };
 
-
-    const updateSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
-        setQuery(value);
-
-        const q = value.toLowerCase();
+    useEffect(() => {
+        const q = query.toLowerCase();
 
         const filterFunc = (project: ProjectMeta) => {
             const matchesQuery =
@@ -71,16 +67,20 @@ export default function ProjectView({projects }: {projects: ProjectMeta[]}) {
             const matchesTags =
                 !filteredTags ||
                 filteredTags.length === 0 ||
-                (project.tags && filteredTags.every(tag => project.tags!.includes(tag)));
+                (project.tags && filteredTags.some(tag => project.tags!.includes(tag)));
             return matchesQuery && matchesTags;
         };
 
         if (q === "" && (!filteredTags || filteredTags.length === 0)) {
             setFilteredProjects(projects);
-            return;
+        } else {
+            setFilteredProjects(projects.filter(filterFunc));
         }
+    }, [query, filteredTags, projects]);
 
-        setFilteredProjects(projects.filter(filterFunc));
+
+    const updateSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(e.target.value);
     }
 
     const handleSearchShortcut = () => {
