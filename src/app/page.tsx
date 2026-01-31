@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import AboutPage from "@/components/About";
 import SkillsSection from "@/components/SkillsSection";
-import ContactSection from "@/components/ContactSection";
+import {ContactSection} from "@/components/ContactSection";
 import LastFmWidget from "@/components/LastFmWidget";
 
 export default function Home() {

@@ -97,7 +97,7 @@ export default function SkillsSection() {
                     name: "SQL",
                     icon: <PiFileSql className="h-8 w-8 text-blue-600" />,
                     description: "Basic knowledge of SQL for database management and queries.",
-                    level: skillLevels.beginner
+                    level: skillLevels.intermediate
                 },
             ]
         }
@@ -113,7 +113,7 @@ export default function SkillsSection() {
         }
     };
     return (
-        <div className="min-h-screen w-full py-16 px-6 flex flex-col items-center justify-center gap-8" id="skills">
+        <div className="min-h-screen w-full py-16 px-6 flex flex-col items-center justify-center gap-8 bg-linear-to-b to-background from-accent/40" id="skills">
             <h2 className="text-red text-3xl md:text-5xl font-bold leading-tight mb-4">
                 My Skills
             </h2>

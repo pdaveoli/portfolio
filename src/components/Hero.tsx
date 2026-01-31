@@ -1,12 +1,25 @@
 ﻿import { AnimatedGradientText } from "@/components/ui/animated-gradient-text"
-import {RainbowButton} from "@/components/ui/rainbow-button";
 import { FaArrowRight, FaCode } from "react-icons/fa6";
 import Link from "next/link";
-import {Button} from "@/components/ui/button";
+import PixelBlast from "@/components/PixelBlast";
 
 export default function Hero() {
     return (
-        <div className="bg-accent/40 relative min-h-screen w-full overflow-hidden flex">
+        <div className="relative min-h-screen w-full overflow-hidden flex">
+            <PixelBlast
+                variant="circle"
+                pixelSize={5}
+                color="#B19EEF"
+                patternScale={4}
+                patternDensity={1}
+                enableRipples
+                rippleSpeed={0.3}
+                rippleThickness={0.1}
+                rippleIntensityScale={1}
+                speed={0.5}
+                transparent
+                edgeFade={0.5}
+            />
             {/* Name in top left corner */}
             <div className="absolute top-8 left-8">
                 <h1 className="text-3xl font-medium tracking-wide">
