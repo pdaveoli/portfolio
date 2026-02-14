@@ -80,7 +80,7 @@ export default async function FeaturedProjects() {
     );
 
     return (
-        <div id="featuredProjects" className="flex bg-accent/40 min-h-screen w-full flex-col items-center justify-center gap-2 p-2">
+        <div id="featuredProjects" className="flex  bg-background min-h-screen w-full flex-col items-center justify-center gap-2 p-2">
             <TextAnimate
                 animation="blurInUp"
                 as="h2"

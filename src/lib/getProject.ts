@@ -56,6 +56,11 @@ export async function getAllProjects(): Promise<ProjectMeta[]> {
     return projects;
 }
 
+export async function getMostRecentProjects(count: number): Promise<ProjectMeta[]> {
+    const allProjects = await getAllProjects();
+    return allProjects.slice(0, count);
+}
+
 export async function getProject<TFrontmatter extends Record<string, unknown>>(
     slug: string,
     components?: MDXRemoteProps['components']

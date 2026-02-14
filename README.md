@@ -12,9 +12,9 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioHero.png" alt="project-screenshot" width="750" height="422/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioNewHero.png" alt="project-screenshot" width="750" height="422/">
 
-<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioAbout.png" alt="project-screenshot" width="750" height="422/">
+<img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioNewAbout.png" alt="project-screenshot" width="750" height="422/">
 
 <img src="https://oliverdave.dev/projectArtwork/portfolio/portfolioFeaturedProjects.png" alt="project-screenshot" width="750" height="422/">
 
@@ -35,7 +35,7 @@ Here're some of the project's best features:
 *   Contact button for easy communication.
 *   SEO optimization for better visibility in search engines.
 *   Light and dark mode support.
-*   Links to my Github and Itch.io profiles.
+*   Links to my GitHub and Itch.io profiles.
 
 
 

@@ -7,7 +7,7 @@ import LastFmWidget from "@/components/LastFmWidget";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center flex-col">
+    <div className="flex min-h-screen max-w-screen overflow-hidden w-full items-center justify-center flex-col">
         <Hero />
         <AboutPage />
         <FeaturedProjects />
