@@ -3,9 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 import {TagPill} from "@/components/TagPill";
 import React from "react";
-
+import { Frown } from "lucide-react";
 
 export default function ProjectList({projects, pinned}: { projects: ProjectMeta[], pinned?: boolean }) {
+    if (!projects||projects.length === 0) {
+        return (
+            <div className="flex flex-col items-center justify-center py-20">
+                <Frown className="h-12 w-12 text-gray-400 mb-4" />
+                <p className="text-gray-500 text-lg">No projects found.</p>
+            </div>
+        )
+    }
+
     return (
         <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project)  => (

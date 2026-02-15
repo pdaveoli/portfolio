@@ -11,10 +11,22 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export function ImageCarousel({ imageUrls }: { imageUrls: string[] }) {
+interface ImageCarouselProps {
+    imageUrls: string[];
+}
+
+export function ImageCarousel({ imageUrls }: ImageCarouselProps) {
     const plugin = React.useRef(
         Autoplay({ delay: 3000, stopOnMouseEnter: true })
     );
+
+    if (!imageUrls || imageUrls.length === 0) {
+        return (
+            <div className="w-full my-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-center text-gray-500">
+                No images to display.
+            </div>
+        )
+    }
 
     return (
         <Carousel

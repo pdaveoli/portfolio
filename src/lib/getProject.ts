@@ -94,6 +94,8 @@ export async function getProject<TFrontmatter extends Record<string, unknown>>(
         components,
         options: {
             parseFrontmatter: false, // We already parsed it
+            blockJS: false,
+            blockDangerousJS: true,
             mdxOptions: {
                 remarkPlugins: [],
                 rehypePlugins: [rehypeSlug],
