@@ -9,6 +9,7 @@
     "Open Source": { color: "bg-orange-500/10", textColor: "text-orange-500", borderColor: "bg-orange-500/40" },
     "Itch.io": { color: "bg-red-500/10", textColor: "text-red-500", borderColor: "bg-red-500/40" },
     "GitHub": { color: "bg-gray-900/10 dark:bg-gray-400/10", textColor: "text-gray-900 dark:text-white", borderColor: "bg-gray-900/40 dark:bg-gray-400/40" },
+    "Firebase": { color: "bg-amber-500/10", textColor: "text-amber-500", borderColor: "bg-amber-500/40" },
 } as const;
 
 export type Tag = keyof typeof TAG_CONFIG;
