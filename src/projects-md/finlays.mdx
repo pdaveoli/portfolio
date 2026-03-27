@@ -1,59 +1,56 @@
 ---
 title: "Finlays.xyz"
 date: "2026-03-21"
-description: "No-code manageable portfolio website for client"
-tags: ["Web Development", "Next.Js", "React.Js", "Tailwind CSS"]
-pinned: false
+description: "A no-code manageable portfolio website built for a freelance client working in Roblox development, lighting design, and graphic design."
+tags: ["Web Development", "Next.Js", "React.Js", "Tailwind CSS", "Firebase"]
+thumbnailUrl: "/default/placeholder-thumbnail.jpg"
+pinned: true
 ---
 
-
 # Overview
-My client's instructions were to build a portfolio website he can use to display all his projects and client work on as an independent freelancer. He worked mainly with Roblox, lighting design, and graphic design. The main purpose was to be editable without looking through the source code of the project. This meant that I would need to utalise on-website building tools like a text editor and databases in order to make it possible to add projects effortlessly.
+Finlays.xyz is a fully custom portfolio website built for a freelance client who works across Roblox development, lighting design, and graphic design. The core requirement was that the site had to be entirely manageable without touching any code — the client needed to be able to add new projects, update testimonials, and manage his commission status all from within the website itself.
 
-### Images
-<ImageCarousel imageUrls={[
-    "/default/placeholder.png",
-    "/default/placeholder.png",
-    "/default/placeholder.png",
-    "/default/placeholder.png",
-    "/default/placeholder.png",
-    "/default/placeholder.png"
-]} />
+To make that possible, I built a complete admin dashboard backed by Firebase, with a rich-text editor so the client could create and edit project entries as easily as writing a document.
+
+## Why This Project?
+My client needed a professional online presence to showcase his work and attract new commissions. As an independent freelancer working across multiple creative disciplines, a static or template-based site wouldn't cut it — he needed a living platform he could keep up to date himself, without relying on me for every small content change.
+
+This was my second client-commissioned project, and it pushed me to think seriously about developer experience versus end-user experience: building something that is technically robust on the inside while being completely approachable for someone with no coding background on the outside.
 
 ## Features
-- Dynamic projects and testimonial pages, with data fetched from a database.
-- Firebase integration (Firestore and Authentication)
-- Contact Form which integrates with Resend and firestore to store contact entries.
-- Fully working dashboard featuring sections for commision status, socials, projects, testimonials, and contact entries.
-- Full rich-text editor using TipTap for projects and testimonials
-- Parallax layout for testimonials page
+- Dynamic projects and testimonials pages, with content fetched from Firestore.
+- Full admin dashboard with sections for commission status, socials, projects, testimonials, and contact entries.
+- Rich-text editor (TipTap) for creating and editing projects and testimonials without code.
+- Contact form integrated with Resend for email delivery and Firestore for persistent storage.
+- Firebase Authentication to protect the dashboard and restrict access to the client only.
+- Parallax layout on the testimonials page for a polished visual feel.
 
 ## Tech Stack
-- Frontend: Next.js, React.js, Tailwind CSS
-- Backend: Firebase, Resend, TipTap
-- Other Tools: GitHub, and Vercel
+- **Frontend:** Next.js, React.js, Tailwind CSS
+- **Backend:** Firebase (Firestore, Authentication), Resend
+- **Editor:** TipTap
+- **Deployment:** Vercel, GitHub
 
 ## Challenges
-### Firebase Integration with Next.Js
-This was my first time utilising Firebase alongside Next.Js. The main issue I ran into was working with authentications and cookies alongside each other. To overcome this issue, I created my own cookie solutions to store authentication tokens to ensure a user stays logged in after going to different pages on the website.
-### Rich Text Editor for Projects and Testimonials
-One big requirement of the project was to have it editable without code. This meant I had to integrate my own editor into the project. Due to time constraints with school, I did not have a massive amount of time to decide between which solution to go with for the project. In the end, I integrated TipTap into the project as it is headerless, very easy to customise and expand, and taught me how to integrate it potentially to other projects due to the flexibility of the tool.
+### Firebase Authentication with Next.js
+This was my first time using Firebase alongside Next.js, and the biggest hurdle was making authentication work correctly with server-side rendering. The issue came down to handling cookies and authentication tokens across page navigations. I solved this by implementing a custom cookie-based session system that stores the Firebase auth token and checks it on each request, keeping the client securely logged in without breaking the Next.js rendering model.
+
+### Building a No-Code Editing Experience
+The hardest design constraint was making the site fully editable by a non-technical user. After evaluating several options under school time pressure, I chose TipTap as the rich-text editor because it is headless and highly customisable. This let me tailor the editing experience to exactly what the client needed, and working with it gave me a solid understanding of how to integrate headless editor libraries into future React projects.
 
 ## What I Learnt
-- No SQL databases (Firebase)
-- Integrating Firebase Authentication into a website
-- How to use TipTap in a React Project
-- More experience around client work and working off a brief
+- Working with NoSQL databases (Firebase Firestore) for dynamic content
+- Integrating Firebase Authentication into a Next.js application with cookie-based sessions
+- Implementing a headless rich-text editor (TipTap) in a React project
+- Balancing technical decisions against real-world time constraints
+- Client communication and iterating on a project based on a brief
 
 ## Future Improvements
-- Image upload using a CDN
-- Any future maintenence changes as the website's lifetime continues
+- Image uploads via a CDN to allow the client to add media to projects
+- Ongoing maintenance updates as the site evolves over its lifetime
 
-## Client Brief and Testimonial
-*Add client brief and testimonial here*
-
-## Live link
-[finlays.xyz](https://finlays.xtz)
+## Links
+- [Live Site](https://www.finlays.xyz)
 
 ## Conclusion
-This was my second ever client-briefed work and overall I think it taught me a lot around making user accessible content for people not familar with coding and complex backends of projects. I also helped improve my communication skills with clients to help ensure I provide a website that matches their vision.
+This project was a significant step forward in my understanding of what it means to build for someone else. It wasn't just about writing clean code — it was about delivering a tool that a real person would use every day. Getting the no-code editing experience right, handling authentication securely, and keeping the whole thing maintainable taught me as much about product thinking as it did about web development. I'm proud of what was built here, and I look forward to supporting it as the client's work continues to grow.
